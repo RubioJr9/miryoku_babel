@@ -96,16 +96,16 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 ***** Thumbs
 
 #+NAME: thumbs
-| U_NP  | U_NP  | ESC   | SPC   | TAB   | ENT   | BSPC  | DEL   | U_NP  | U_NP  |
+| U_NP | U_NP | TAB | E | ESC | ENT | SPC | BSPC | U_NP | U_NP |
 
 
 **** Hold
 
 #+NAME: hold
-| RESET  |        |        |        |        |        |        |        |        | RESET  |
-| LGUI   | LALT   | LCTL   | LSFT   |        |        | LSFT   | LCTL   | LALT   | LGUI   |
-| BUTTON | ALGR   |        |        |        |        |        |        | ALGR   | BUTTON |
-| U_NP   | U_NP   | MEDIA  | NAV    | MOUSE  | SYM    | NUM    | FUN    | U_NP   | U_NP   |
+| RESET |      |      |      |      |      |      |      |      | RESET |
+| LGUI  | LALT | LCTL | LSFT |      |      | LSFT | LCTL | LALT | LGUI  |
+|       | ALGR |      |      | MOUR | FUNL |      |      | ALGR |       |
+| U_NP  | U_NP | MEDR | NAVR | NR   | NSL  | PL   | BL   | U_NP | U_NP  |
 
 
 *** Nav
@@ -114,7 +114,7 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 | U_RDO | U_PST | U_CPY | U_CUT | U_UND |
 | CAPS  | LEFT  | DOWN  | UP    | RGHT  |
 | INS   | HOME  | PGDN  | PGUP  | END   |
-| ENT   | BSPC  | DEL   | U_NP  | U_NP  |
+| ENT   | DEL   | BSPC  | U_NP  | U_NP  |
 
 
 *** Mouse
@@ -146,11 +146,11 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 
 *** Num
 
-#+NAME: num-l
-| [    | 7    | 8    | 9    | ]    |
-| ;    | 4    | 5    | 6    | =    |
-| `    | 1    | 2    | 3    | \    |
-| U_NP | U_NP | DOT  | 0    | MINS |
+#+NAME: num-r
+| (   | 7 |   8 |    9 | )    |
+| +   | 1 |   2 |    3 | 4    |
+| -   | 5 |   6 |    * | /    |
+| SPC | 0 | DOT | U_NP | U_NP |
 
 
 *** Sym
@@ -163,12 +163,33 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 
 
 *** Fun
-
 #+NAME: fun-l
-| F12  | F7   | F8   | F9   | PSCR |
-| F11  | F4   | F5   | F6   | SLCK |
-| F10  | F1   | F2   | F3   | PAUS |
-| U_NP | U_NP | APP  | SPC  | TAB  |
+| F10  | F9   | F8  | F7  | PSCR |
+| F4   | F3   | F2  | F1  | SLCK |
+| F12  | F11  | F6  | F5  | PAUS |
+| U_NP | U_NP | APP | SPC | TAB  |
+
+
+*** Brackets (~BL~)
+#+NAME: bl-l
+| }    | >    | ] | ) |   |
+| {    | <    | [ | ( |   |
+| }    | >    | ] | ) |   |
+| U_NP | U_NP |   | = | _ |
+
+*** Punctuation (~PL~)
+#+NAME: pl-l
+|      | `    | @    | ~ |   |
+| ?    | !    | DQUO | ' |   |
+|      |      | &    | \ |   |
+| U_NP | U_NP | PIPE | ; | : |
+
+*** Number Symbols (~NSL~)
+#+NAME: nsl-l
+| RGB_TOG |      |      | $ |   |
+| *       | /    | MINS | + |   |
+|         |      | %    | # |   |
+| U_NP    | U_NP | ^    | = | _ |
 
 
 *** Alternative Layouts
@@ -256,6 +277,15 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 | A    | S    | D    | F    | G    | H    | J    | K    | L    | '    |
 | Y    | X    | C    | V    | B    | N    | M    | ,    | DOT  | /    |
 
+
+***** RSTHP
+
+~MIRYOKU_ALPHAS=RSTHP~
+
+#+NAME: rsthp
+|      | C    | Y   | F | K   | Z   | L   | ,    | U    | Q          |
+| R    | S    | T   | H | P   | W   | N   | A    | I    | O          |
+| J    | V    | G   | D | B   | X   | M   | .    | DEL  | TG(GAMING) |
 
 **** Nav
 
@@ -379,6 +409,13 @@ Only available with ~MIRYOKU_LAYERS=FLIP~.
 
 **** Layers
 
+***** Gaming Layer
+#+NAME: gaming
+| ESC  | C    | Y | F   | K   | Z   | L | DOT  | U    | Q          |
+| R    | S    | T | H   | P   | W   | N | A    | I    | O          |
+| J    | V    | G | D   | B   | X   | M | .    | DEL  | TG(GAMING) |
+| U_NP | U_NP | Q | SPC | TAB | ENT | E | BSPC | U_NP | U_NP       |
+
 
 ***** Flip
 
@@ -490,7 +527,7 @@ Only available with ~MIRYOKU_LAYERS=FLIP~.
 **** layers
 
 #+NAME: layers
-| BASE | BUTTON | NAV | MOUSE | MEDIA | NUM | SYM | FUN |
+| BASE | BUTTON | NAV | MOUSE | MEDIA | NUM | SYM | FUN | NSL | BL | PL | GAMING |
 
 
 **** symbol-names
@@ -694,7 +731,7 @@ results
 Produce base layer from separate alphas, thumbs, and hold tables.
 
 #+NAME: table-layer-taphold
-#+BEGIN_SRC python :session :var alphas_table=colemakdh :var thumbs_table=thumbs :var hold_table=hold :tangle no :results verbatim
+#+BEGIN_SRC python :session :var alphas_table=rsthp :var thumbs_table=thumbs :var hold_table=hold :tangle no :results verbatim
 results = ''
 for tap_row, hold_row in zip(alphas_table + thumbs_table, hold_table):
   for tap, hold in zip(tap_row, hold_row):
@@ -729,10 +766,10 @@ results
 #+END_SRC
 
 #+RESULTS: table-layer-taphold
-: KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,              KC_J,              KC_L,              KC_U,              KC_Y,              KC_QUOT,           \
-: LGUI_T(KC_A),      LALT_T(KC_R),      LCTL_T(KC_S),      LSFT_T(KC_T),      KC_G,              KC_M,              LSFT_T(KC_N),      LCTL_T(KC_E),      LALT_T(KC_I),      LGUI_T(KC_O),      \
-: LT(BUTTON, KC_Z),  ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,              KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    LT(BUTTON, KC_SLSH), \
-: U_NP,              U_NP,              LT(MEDIA, KC_ESC), LT(NAV, KC_SPC),   LT(MOUSE, KC_TAB), LT(SYM, KC_ENT),   LT(NUM, KC_BSPC),  LT(FUN, KC_DEL),   U_NP,              U_NP
+: U_NU,              KC_C,              KC_Y,              KC_F,              KC_K,              KC_Z,              KC_L,              KC_COMM,           KC_U,              KC_Q,              \
+: LGUI_T(KC_R),      LALT_T(KC_S),      LCTL_T(KC_T),      LSFT_T(KC_H),      KC_P,              KC_W,              LSFT_T(KC_N),      LCTL_T(KC_A),      LALT_T(KC_I),      LGUI_T(KC_O),      \
+: KC_J,              ALGR_T(KC_V),      KC_G,              KC_D,              KC_B,              KC_X,              KC_M,              KC_DOT,            ALGR_T(KC_DEL),    KC_TG(GAMING),     \
+: U_NP,              U_NP,              KC_TAB,            KC_E,              KC_ESC,            LT(NSL, KC_ENT),   LT(PL, KC_SPC),    LT(BL, KC_BSPC),   U_NP,              U_NP
 
 
 
@@ -784,10 +821,10 @@ results
 #+END_SRC
 
 #+RESULTS: table-layer-half
-: KC_RESET,          U_NA,              U_NA,              U_NA,              U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
+: RESET,             U_NA,              U_NA,              U_NA,              U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
 : KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           U_NA,              U_NU,              KC_MS_L,           KC_MS_D,           KC_MS_U,           KC_MS_R,           \
-: U_NA,              KC_ALGR,           U_NA,              U_NA,              U_NA,              U_NU,              KC_WH_L,           KC_WH_D,           KC_WH_U,           KC_WH_R,           \
-: U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_BTN1,           KC_BTN3,           KC_BTN2,           U_NP,              U_NP
+: U_NA,              KC_ALGR,           U_NA,              U_NA,              KC_MOUR,           U_NU,              KC_WH_L,           KC_WH_D,           KC_WH_U,           KC_WH_R,           \
+: U_NP,              U_NP,              KC_MEDR,           KC_NAVR,           KC_NR,             KC_BTN1,           KC_BTN3,           KC_BTN2,           U_NP,              U_NP
 
 
 
@@ -820,9 +857,9 @@ results
 
 #+RESULTS: table-layer-full
 : U_UND,             U_CUT,             U_CPY,             U_PST,             U_RDO,             U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
-: &kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         &none,             &none,             &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
+: KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           KC_NO,             KC_NO,             KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,           \
 : U_UND,             U_CUT,             U_CPY,             U_PST,             U_RDO,             U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
-: U_NP,              U_NP,              U_NU,              U_NU,              &kp KP_N5,         &kp KP_N5,         U_NU,              U_NU,              U_NP,              U_NP
+: U_NP,              U_NP,              KC_BTN2,           KC_BTN3,           KC_BTN1,           KC_BTN1,           KC_BTN3,           KC_BTN2,           U_NP,              U_NP
 
 
 **** layer-body
@@ -873,6 +910,8 @@ Body of miryoku_layer.h.
       #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_QWERTY
     #elif defined (MIRYOKU_ALPHAS_QWERTZ)
       #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_QWERTZ
+    #elif defined (MIRYOKU_ALPHAS_RSTHP)
+      #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_RSTHP
     #else
       #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH
     #endif
@@ -954,6 +993,10 @@ Body of miryoku_layer.h.
 #if !defined(MIRYOKU_LAYER_BUTTON)
   #define MIRYOKU_LAYER_BUTTON MIRYOKU_ALTERNATIVES_BUTTON
 #endif
+
+#if !defined(MIRYOKU_LAYER_BL)
+  #define MIRYOKU_LAYER_BL MIRYOKU_ALTERNATIVES_BL
+#endif
 #+END_SRC
 
 
@@ -1000,7 +1043,7 @@ return results
 #+END_SRC
 
 #+RESULTS: layer-names-list
-: BASE, BUTTON, NAV, MOUSE, MEDIA, NUM, SYM, FUN
+: BASE, BUTTON, NAV, MOUSE, MEDIA, NUM, SYM, FUN, NSL, BL, PL, GAMING
 
 
 
@@ -1031,14 +1074,18 @@ return results
 #+END_SRC
 
 #+RESULTS: layer-names-defines
-: #define BASE   0
-: #define BUTTON 1
-: #define NAV    2
-: #define MOUSE  3
-: #define MEDIA  4
-: #define NUM    5
-: #define SYM    6
-: #define FUN    7
+#define BASE   0
+#define BUTTON 1
+#define NAV    2
+#define MOUSE  3
+#define MEDIA  4
+#define NUM    5
+#define SYM    6
+#define FUN    7
+#define NSL    8
+#define BL     9
+#define PL     10
+#define GAMING 11
 
 
 
@@ -1130,6 +1177,9 @@ return results
 #define MIRYOKU_ALTERNATIVES_BASE_QWERTZ \
 <<table-layer-taphold(alphas_table=qwertz)>>
 
+#define MIRYOKU_ALTERNATIVES_BASE_RSTHP \
+<<table-layer-taphold(alphas_table=rsthp)>>
+
 
 #define MIRYOKU_ALTERNATIVES_NAV_INVERTEDT_FLIP \
 <<table-layer-half(half_table=nav-l-invertedt, mode="l", hold_table=hold-flip)>>
@@ -1174,7 +1224,7 @@ return results
 <<table-layer-half(half_table=num-r, mode="r", hold_table=hold-flip)>>
 
 #define MIRYOKU_ALTERNATIVES_NUM \
-<<table-layer-half(half_table=num-l, mode="l")>>
+<<table-layer-half(half_table=num-r, mode="r")>>
 
 
 #define MIRYOKU_ALTERNATIVES_SYM_FLIP \
@@ -1190,9 +1240,21 @@ return results
 #define MIRYOKU_ALTERNATIVES_FUN \
 <<table-layer-half(half_table=fun-l, mode="l")>>
 
+#define MIRYOKU_ALTERNATIVES_BL \
+<<table-layer-half(half_table=bl-l, mode="l")>>
+
+#define MIRYOKU_ALTERNATIVES_PL \
+<<table-layer-half(half_table=pl-l, mode="l")>>
+
+#define MIRYOKU_ALTERNATIVES_NSL \
+<<table-layer-half(half_table=nsl-l, mode="l")>>
+
 
 #define MIRYOKU_ALTERNATIVES_BUTTON \
 <<table-layer-full(table=button)>>
+
+#define MIRYOKU_ALTERNATIVE_GAMING \
+<<table-layer-full(table=gaming)>>
 
 #+END_SRC
 
@@ -1290,6 +1352,9 @@ return results
 #define MIRYOKU_ALTERNATIVES_BASE_QWERTZ \
 <<table-layer-taphold(alphas_table=qwertz)>>
 
+#define MIRYOKU_ALTERNATIVES_BASE_RSTHP \
+<<table-layer-taphold(alphas_table=rsthp)>>
+
 
 #define MIRYOKU_ALTERNATIVES_NAV_INVERTEDT_FLIP \
 <<table-layer-half(half_table=nav-l-invertedt, mode="l", hold_table=hold-flip)>>
@@ -1334,7 +1399,7 @@ return results
 <<table-layer-half(half_table=num-r, mode="r", hold_table=hold-flip)>>
 
 #define MIRYOKU_ALTERNATIVES_NUM \
-<<table-layer-half(half_table=num-l, mode="l")>>
+<<table-layer-half(half_table=num-r, mode="r")>>
 
 
 #define MIRYOKU_ALTERNATIVES_SYM_FLIP \
