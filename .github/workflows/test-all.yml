@@ -3,7 +3,7 @@ on:
   - workflow_dispatch
 jobs:
   test:
-    uses: manna-harbour/miryoku_babel/.github/workflows/main.yml@master
+    uses: RubioJr9/miryoku_babel/.github/workflows/main.yml@master
     with:
       mode: '["test"]'
       emacs-package: '["emacs-nox"]'
