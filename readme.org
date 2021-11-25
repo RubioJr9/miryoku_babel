@@ -1415,6 +1415,18 @@ return results
 #define MIRYOKU_ALTERNATIVES_FUN \
 <<table-layer-half(half_table=fun-l, mode="l")>>
 
+#define MIRYOKU_ALTERNATIVES_BL \
+<<table-layer-half(half_table=bl-l, mode="l")>>
+
+#define MIRYOKU_ALTERNATIVES_PL \
+<<table-layer-half(half_table=pl-l, mode="l")>>
+
+#define MIRYOKU_ALTERNATIVES_NSL \
+<<table-layer-half(half_table=nsl-l, mode="l")>>
+
+#define MIRYOKU_ALTERNATIVES_GAMING \
+<<table-layer-full(table=gaming)>>
+
 
 #define MIRYOKU_ALTERNATIVES_BUTTON \
 <<table-layer-full(table=button)>>
