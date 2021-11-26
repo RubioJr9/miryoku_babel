@@ -692,6 +692,7 @@ Source keycode to implementation equivalent (source, QMK, ZMK).
 | WH_R       | WH_R       | U_WH_R          |
 | WH_U       | WH_U       | U_WH_U          |
 | U_MT       | U_MT       | LS(LNLCK)       |
+| TG(GAMING) | TG(GAMING) | &tog GAMING     |
 
 
 **** table-layer-init
