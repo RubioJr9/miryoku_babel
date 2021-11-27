@@ -102,10 +102,10 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 **** Hold
 
 #+NAME: hold
-| RESET |      |      |      |       |      |      |      |      | RESET |
-| LGUI  | LALT | LCTL | LSFT |       |      | LSFT | LCTL | LALT | LGUI  |
-|       | ALGR |      |      | MOUSE | FUNL |      |      | ALGR |       |
-| U_NP  | U_NP | MEDR | NAVR | NR    | NSL  | PL   | BL   | U_NP | U_NP  |
+| RESET |      |       |      |       |      |      |      |      | RESET |
+| LGUI  | LALT | LCTL  | LSFT |       |      | LSFT | LCTL | LALT | LGUI  |
+|       | ALGR |       |      | MOUSE | FUN  |      |      | ALGR |       |
+| U_NP  | U_NP | MEDIA | NAVR | NUM   | NSYM | PUNC | BRAC | U_NP | U_NP  |
 
 
 *** Nav
@@ -170,22 +170,22 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 | U_NP | U_NP | APP | SPC | TAB  |
 
 
-*** Brackets (~BL~)
-#+NAME: bl-l
+*** Brackets (~BRAC~)
+#+NAME: brac-l
 | }    | >    | ] | ) |   |
 | {    | <    | [ | ( |   |
 | }    | >    | ] | ) |   |
 | U_NP | U_NP |   | = | _ |
 
-*** Punctuation (~PL~)
-#+NAME: pl-l
+*** Punctuation (~PUNC~)
+#+NAME: punc-l
 |      | `    | @    | ~ |   |
 | ?    | !    | DQUO | ' |   |
 |      |      | &    | \ |   |
 | U_NP | U_NP | PIPE | ; | : |
 
-*** Number Symbols (~NSL~)
-#+NAME: nsl-l
+*** Number Symbols (~NSYM~)
+#+NAME: nsym-l
 | RGB_TOG |      |      | $ |   |
 | *       | /    | MINS | + |   |
 |         |      | %    | # |   |
@@ -527,7 +527,7 @@ Only available with ~MIRYOKU_LAYERS=FLIP~.
 **** layers
 
 #+NAME: layers
-| BASE | BUTTON | NAV | MOUSE | MEDIA | NUM | SYM | FUN | NSL | BL | PL | GAMING |
+| BASE | BUTTON | NAV | MOUSE | MEDIA | NUM | SYM | FUN | NSYM | BRAC | PUNC | GAMING |
 
 
 **** symbol-names
@@ -995,16 +995,16 @@ Body of miryoku_layer.h.
   #define MIRYOKU_LAYER_BUTTON MIRYOKU_ALTERNATIVES_BUTTON
 #endif
 
-#if !defined(MIRYOKU_LAYER_BL)
-  #define MIRYOKU_LAYER_BL MIRYOKU_ALTERNATIVES_BL
+#if !defined(MIRYOKU_LAYER_BRAC)
+  #define MIRYOKU_LAYER_BRAC MIRYOKU_ALTERNATIVES_BRAC
 #endif
 
-#if !defined(MIRYOKU_LAYER_PL)
-  #define MIRYOKU_LAYER_PL MIRYOKU_ALTERNATIVES_PL
+#if !defined(MIRYOKU_LAYER_PUNC)
+  #define MIRYOKU_LAYER_PUNC MIRYOKU_ALTERNATIVES_PUNC
 #endif
 
-#if !defined(MIRYOKU_LAYER_NSL)
-  #define MIRYOKU_LAYER_NSL MIRYOKU_ALTERNATIVES_NSL
+#if !defined(MIRYOKU_LAYER_NSYM)
+  #define MIRYOKU_LAYER_NSYM MIRYOKU_ALTERNATIVES_NSYM
 #endif
 
 #if !defined(MIRYOKU_LAYER_GAMING)
@@ -1095,9 +1095,9 @@ return results
 #define NUM    5
 #define SYM    6
 #define FUN    7
-#define NSL    8
-#define BL     9
-#define PL     10
+#define NSYM   8
+#define BRAC   9
+#define PUNC   10
 #define GAMING 11
 
 
@@ -1253,14 +1253,14 @@ return results
 #define MIRYOKU_ALTERNATIVES_FUN \
 <<table-layer-half(half_table=fun-l, mode="l")>>
 
-#define MIRYOKU_ALTERNATIVES_BL \
-<<table-layer-half(half_table=bl-l, mode="l")>>
+#define MIRYOKU_ALTERNATIVES_BRAC \
+<<table-layer-half(half_table=brac-l, mode="l")>>
 
-#define MIRYOKU_ALTERNATIVES_PL \
-<<table-layer-half(half_table=pl-l, mode="l")>>
+#define MIRYOKU_ALTERNATIVES_PUNC \
+<<table-layer-half(half_table=punc-l, mode="l")>>
 
-#define MIRYOKU_ALTERNATIVES_NSL \
-<<table-layer-half(half_table=nsl-l, mode="l")>>
+#define MIRYOKU_ALTERNATIVES_NSYM \
+<<table-layer-half(half_table=nsym-l, mode="l")>>
 
 
 #define MIRYOKU_ALTERNATIVES_BUTTON \
@@ -1428,14 +1428,14 @@ return results
 #define MIRYOKU_ALTERNATIVES_FUN \
 <<table-layer-half(half_table=fun-l, mode="l")>>
 
-#define MIRYOKU_ALTERNATIVES_BL \
-<<table-layer-half(half_table=bl-l, mode="l")>>
+#define MIRYOKU_ALTERNATIVES_BRAC \
+<<table-layer-half(half_table=brac-l, mode="l")>>
 
-#define MIRYOKU_ALTERNATIVES_PL \
-<<table-layer-half(half_table=pl-l, mode="l")>>
+#define MIRYOKU_ALTERNATIVES_PUNC \
+<<table-layer-half(half_table=punc-l, mode="l")>>
 
-#define MIRYOKU_ALTERNATIVES_NSL \
-<<table-layer-half(half_table=nsl-l, mode="l")>>
+#define MIRYOKU_ALTERNATIVES_NSYM \
+<<table-layer-half(half_table=nsym-l, mode="l")>>
 
 #define MIRYOKU_ALTERNATIVES_GAMING \
 <<table-layer-full(table=gaming)>>
