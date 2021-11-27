@@ -105,7 +105,7 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 | RESET |      |       |      |       |      |      |      |      | RESET |
 | LGUI  | LALT | LCTL  | LSFT |       |      | LSFT | LCTL | LALT | LGUI  |
 |       | ALGR |       |      | MOUSE | FUN  |      |      | ALGR |       |
-| U_NP  | U_NP | MEDIA | NAVR | NUM   | NSYM | PUNC | BRAC | U_NP | U_NP  |
+| U_NP  | U_NP | MEDIA | NAV  | NUM   | NSYM | PUNC | BRAC | U_NP | U_NP  |
 
 
 *** Nav
