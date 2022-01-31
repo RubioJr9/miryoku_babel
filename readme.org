@@ -1659,7 +1659,7 @@ return results
 <<table-layer-half(half_table=num-r, mode="r", hold_table=hold-flip)>>
 
 #define MIRYOKU_ALTERNATIVES_NUM \
-<<table-layer-half(half_table=num-l, mode="l")>>
+<<table-layer-half(half_table=num-r, mode="r")>>
 
 
 #define MIRYOKU_ALTERNATIVES_SYM_FLIP \
