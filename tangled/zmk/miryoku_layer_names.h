@@ -10,3 +10,8 @@
 #define NUM    5
 #define SYM    6
 #define FUN    7
+#define NSYM   8
+#define BRAC   9
+#define PUNC   10
+#define GAMING 11
+#define RIGHTY 12

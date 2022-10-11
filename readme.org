@@ -297,9 +297,9 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 ~MIRYOKU_ALPHAS=RSTHP~
 
 #+NAME: rsthp
-|      | C    | Y   | F | K   | Z   | L   | ,    | U    | Q          |
-| R    | S    | T   | H | P   | W   | N   | A    | I    | O          |
-| J    | V    | G   | D | B   | X   | M   | .    | DEL  | TG(GAMING) |
+|   | C | Y | F | K | Z | L | , | U   | Q          |
+| R | S | T | H | P | W | N | A | I   | O          |
+| J | V | G | D | B | X | M | . | DEL | TG(RIGHTY) |
 
 **** Nav
 
@@ -379,7 +379,16 @@ Not available with ~MIRYOKU_LAYERS=FLIP~.
 | J    | V    | G | D   | B   | X   | M | .    | DEL  | TG(GAMING) |
 | U_NP | U_NP | Q | SPC | TAB | ENT | E | BSPC | U_NP | U_NP       |
 
+***** Righty Layer
+#+NAME: righty
+| Q    | U    | ,     | L   | Z   | K   | F | Y   | C    | TG(RIGHTY) |
+| O    | I    | A     | N   | W   | P   | H | T   | S    | R          |
+|      | DEL  | .     | M   | X   | B   | D | G   | V    | J          |
+| U_NP | U_NP | BSPC  | SPC | ENT | ESC | E | TAB | U_NP | U_NP       |
 
+|   | C | Y | F | K | Z | L | , | U   | Q          |
+| R | S | T | H | P | W | N | A | I   | O          |
+| J | V | G | D | B | X | M | . | DEL | TG(RIGHTY) |
 ***** Flip
 
 ~MIRYOKU_LAYERS=FLIP~
@@ -1052,6 +1061,10 @@ Body of miryoku_layer.h.
 #if !defined(MIRYOKU_LAYER_GAMING)
   #define MIRYOKU_LAYER_GAMING MIRYOKU_ALTERNATIVES_GAMING
 #endif
+
+#if !defined(MIRYOKU_LAYER_RIGHTY)
+  #define MIRYOKU_LAYER_RIGHTY MIRYOKU_ALTERNATIVES_RIGHTY
+#endif
 #+END_SRC
 
 
@@ -1098,7 +1111,7 @@ return results
 #+END_SRC
 
 #+RESULTS: layer-names-list
-: BASE, BUTTON, NAV, MOUSE, MEDIA, NUM, SYM, FUN, NSL, BL, PL, GAMING
+: BASE, BUTTON, NAV, MOUSE, MEDIA, NUM, SYM, FUN, NSL, BL, PL, GAMING, RIGHTY
 
 
 
@@ -1141,6 +1154,7 @@ return results
 #define BRAC   9
 #define PUNC   10
 #define GAMING 11
+#define RIGHTY 12
 
 
 
@@ -1360,6 +1374,8 @@ return results
 
 #+END_SRC
 
+#+RESULTS:
+
 
 **** [[tangled/zmk/miryoku_alternatives.h]]
 
@@ -1514,6 +1530,10 @@ return results
 
 #define MIRYOKU_ALTERNATIVES_GAMING \
 <<table-layer-full(table=gaming)>>
+
+#define MIRYOKU_ALTERNATIVES_RIGHTY \
+/* <<table-layer-full(table=righty, hold_table=hold-flip)>> */
+<<table-layer-taphold(alphas_table=righty, thumbs_table=thumbs-flip, hold_table=hold-flip)>>
 
 
 #define MIRYOKU_ALTERNATIVES_BUTTON \
