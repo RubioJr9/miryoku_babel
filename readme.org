@@ -153,8 +153,15 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 
 
 *** Num
+#+NAME: num-l
+| [    | 7    | 8    | 9    | ]    |
+| ;    | 4    | 5    | 6    | =    |
+| `    | 1    | 2    | 3    | \    |
+| U_NP | U_NP | DOT  | 0    | MINS |
 
-#+NAME: num-r
+*** Num - Benford
+# Based on https://en.wikipedia.org/wiki/Benford%27s_law
+#+NAME: num-benford-r
 | (   | 7 |   8 |    9 | )    |
 | +   | 1 |   2 |    3 | 4    |
 | -   | 5 |   6 |    * | /    |
@@ -551,7 +558,7 @@ Not available with ~MIRYOKU_LAYERS=FLIP~.
 | U_NUM    | Num    |
 | U_SYM    | Sym    |
 | U_FUN    | Fun    |
-| U_NSYM   | Sym    |
+| U_NSYM   | Nsym   |
 | U_BRAC   | Brac   |
 | U_PUNC   | Punc   |
 | U_GAMING | Gaming |
@@ -1163,11 +1170,12 @@ Body of miryoku_layer_selection.h.
 #endif
 
 #if !defined(MIRYOKU_LAYER_NUM)
-  #if defined (MIRYOKU_LAYERS_FLIP)
-    #define MIRYOKU_LAYER_NUM MIRYOKU_ALTERNATIVES_NUM_FLIP
-  #else
-    #define MIRYOKU_LAYER_NUM MIRYOKU_ALTERNATIVES_NUM
-  #endif
+  /* #if defined (MIRYOKU_LAYERS_FLIP) */
+  /*   #define MIRYOKU_LAYER_NUM MIRYOKU_ALTERNATIVES_NUM_FLIP */
+  /* #else */
+  /*   #define MIRYOKU_LAYER_NUM MIRYOKU_ALTERNATIVES_NUM */
+  /* #endif */
+  #define MIRYOKU_LAYER_NUM MIRYOKU_ALTERNATIVES_NUM_BENFORD
 #endif
 #if !defined(MIRYOKU_LAYERMAPPING_NUM)
   #define MIRYOKU_LAYERMAPPING_NUM MIRYOKU_MAPPING
@@ -1486,9 +1494,10 @@ prepended.
 <<table-layer-half(current_layer_name="U_NUM", opposite_layer_name="U_NAV", half_table=num-r, mode="r", hold_table=hold-flip)>>
 
 #define MIRYOKU_ALTERNATIVES_NUM \
-//<<table-layer-half(half_table=num-r, mode="r")>>
 <<table-layer-half(current_layer_name="U_NUM", opposite_layer_name="U_NAV", half_table=num-l, mode="l")>>
 
+#define MIRYOKU_ALTERNATIVES_NUM_BENFORD \
+<<table-layer-half(current_layer_name="U_NUM", opposite_layer_name="U_NAV", half_table=num-benford-r, mode="r")>>
 
 #define MIRYOKU_ALTERNATIVES_SYM_FLIP \
 <<table-layer-half(current_layer_name="U_SYM", opposite_layer_name="U_MOUSE", half_table=sym-r, mode="r", hold_table=hold-flip)>>
@@ -1749,6 +1758,9 @@ prepended.
 #define MIRYOKU_ALTERNATIVES_NUM \
 <<table-layer-half(current_layer_name="U_NUM", opposite_layer_name="U_NAV", half_table=num-l, mode="l")>>
 
+#define MIRYOKU_ALTERNATIVES_NUM_BENFORD \
+<<table-layer-half(current_layer_name="U_NUM", opposite_layer_name="U_NAV", half_table=num-benford-r, mode="r")>>
+
 
 #define MIRYOKU_ALTERNATIVES_SYM_FLIP \
 <<table-layer-half(current_layer_name="U_SYM", opposite_layer_name="U_MOUSE", half_table=sym-r, mode="r", hold_table=hold-flip)>>
@@ -2006,6 +2018,8 @@ prepended.
 #define MIRYOKU_ALTERNATIVES_NUM \
 <<table-layer-half(current_layer_name="U_NUM", opposite_layer_name="U_NAV", half_table=num-l, mode="l")>>
 
+#define MIRYOKU_ALTERNATIVES_NUM_BENFORD \
+<<table-layer-half(current_layer_name="U_NUM", opposite_layer_name="U_NAV", half_table=num-benford-r, mode="r")>>
 
 #define MIRYOKU_ALTERNATIVES_SYM_FLIP \
 <<table-layer-half(current_layer_name="U_SYM", opposite_layer_name="U_MOUSE", half_table=sym-r, mode="r", hold_table=hold-flip)>>
