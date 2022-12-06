@@ -368,16 +368,16 @@ U_NP,              U_NP,              U_LPRN,            U_RPRN,            \_, 
 
 
 #define MIRYOKU_ALTERNATIVES_FUN_FLIP \
-U_NA,              U_DF(U_TAP),       U_DF(U_EXTRA),     U_DF(U_BASE),      U_NA,              sysrq,             f7,                f8,                f9,                f12,               \
-met,               alt,               ctl,               sft,               U_NA,              slck,              f4,                f5,                f6,                f11,               \
-U_NA,              ralt,              U_DF(U_MEDIA),     U_DF(U_FUN),       U_NA,              pause,             f1,                f2,                f3,                f10,               \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              tab,               spc,               comp,              U_NP,              U_NP
+U_NA,              U_DF(U_TAP),       U_DF(U_EXTRA),     U_DF(U_BASE),      U_NA,              sysrq,             f9,                f8,                f7,                f10,               \
+met,               alt,               ctl,               sft,               U_NA,              f4,                f3,                f2,                f1,                f11,               \
+U_NA,              ralt,              U_DF(U_MEDIA),     U_DF(U_FUN),       U_NA,              pause,             slck,              f6,                f5,                f12,               \
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              comp,              spc,               tab,               U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_FUN \
-f12,               f7,                f8,                f9,                sysrq,             U_NA,              U_DF(U_BASE),      U_DF(U_EXTRA),     U_DF(U_TAP),       U_NA,              \
-f11,               f4,                f5,                f6,                slck,              U_NA,              sft,               ctl,               alt,               met,               \
-f10,               f1,                f2,                f3,                pause,             U_NA,              U_DF(U_FUN),       U_DF(U_MEDIA),     ralt,              U_NA,              \
-U_NP,              U_NP,              comp,              spc,               tab,               U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+sysrq,             f9,                f8,                f7,                f10,               U_NA,              U_DF(U_BASE),      U_DF(U_EXTRA),     U_DF(U_TAP),       U_NA,              \
+f4,                f3,                f2,                f1,                f11,               U_NA,              sft,               ctl,               alt,               met,               \
+pause,             slck,              f6,                f5,                f12,               U_NA,              U_DF(U_FUN),       U_DF(U_MEDIA),     ralt,              U_NA,              \
+U_NP,              U_NP,              tab,               spc,               comp,              U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 
 #define MIRYOKU_ALTERNATIVES_BUTTON \
