@@ -427,10 +427,10 @@ Not available with ~MIRYOKU_LAYERS=FLIP~.
 ****** Fun
 
 #+NAME: fun-r
-| PSCR | F7   | F8   | F9   | F12  |
-| SLCK | F4   | F5   | F6   | F11  |
-| PAUS | F1   | F2   | F3   | F10  |
-| TAB  | SPC  | APP  | U_NP | U_NP |
+| PSCR | F9   | F8  | F7   | F10  |
+| F4   | F3   | F2  | F1   | F11  |
+| PAUS | SLCK | F6  | F5   | F12  |
+| TAB  | SPC  | APP | U_NP | U_NP |
 
 
 ****** Nav
