@@ -98,17 +98,50 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 ***** Thumbs
 
 #+NAME: thumbs
-| U_NP  | U_NP  | ESC   | SPC   | TAB   | ENT   | BSPC  | DEL   | U_NP  | U_NP  |
+| U_NP | U_NP | TAB | E | ESC | ENT | SPC | BSPC | U_NP | U_NP |
 
 
 **** Hold
 
 #+NAME: hold
-| BOOT     | DF(U_TAP) | DF(U_EXTRA) | DF(U_BASE) |         |       | DF(U_BASE) | DF(U_EXTRA) | DF(U_TAP) | BOOT     |
-| LGUI     | LALT      | LCTL        | LSFT       |         |       | LSFT       | LCTL        | LALT      | LGUI     |
-| U_BUTTON | ALGR      | LOCK_OPP    | LOCK_CUR   |         |       | LOCK_CUR   | LOCK_OPP    | ALGR      | U_BUTTON |
-| U_NP     | U_NP      | U_MEDIA     | U_NAV      | U_MOUSE | U_SYM | U_NUM      | U_FUN       | U_NP      | U_NP     |
+| BOOT | DF(U_TAP) | DF(U_EXTRA) | DF(U_BASE) |         |        | DF(U_BASE) | DF(U_EXTRA) | DF(U_TAP) | BOOT |
+| LGUI | LALT      | LCTL        | LSFT       |         |        | LSFT       | LCTL        | LALT      | LGUI |
+|      | ALGR      | LOCK_OPP    | LOCK_CUR   |         | U_FUN  | LOCK_CUR   | LOCK_OPP    | ALGR      |      |
+| U_NP | U_NP      | U_MEDIA     | U_NAV      | U_BNFRD | U_NSYM | U_PUNC     | U_BRAC      | U_NP      | U_NP |
 
+*** Brackets (~BRAC~)
+
+#+NAME: brac-l
+| }    | >    | ] | ) |   |
+| {    | <    | [ | ( |   |
+| }    | >    | ] | ) |   |
+| U_NP | U_NP |   | = | _ |
+
+*** Punctuation (~PUNC~)
+
+#+NAME: punc-l
+|      | `    | @    | ~ |   |
+| ?    | !    | DQUO | ' |   |
+|      |      | &    | \ |   |
+| U_NP | U_NP | PIPE | ; | : |
+
+
+*** Number Symbols (~NSYM~)
+
+#+NAME: nsym-l
+| RGB_TOG |      |      | $ |   |
+| *       | /    | MINS | + |   |
+|         |      | %    | # |   |
+| U_NP    | U_NP | ^    | = | _ |
+
+
+*** Num - Benford
+# Based on https://en.wikipedia.org/wiki/Benford%27s_law
+#+NAME: bnfrd-r
+| (   | 7 |   8 |    9 | )    |
+| +   | 1 |   2 |    3 | 4    |
+| -   | 5 |   6 |    * | /    |
+| SPC | 0 | DOT | U_NP | U_NP |
 
 *** Nav
 
@@ -269,6 +302,16 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 | Q    | W    | E    | R    | T    | Z    | U    | I    | O    | P    |
 | A    | S    | D    | F    | G    | H    | J    | K    | L    | '    |
 | Y    | X    | C    | V    | B    | N    | M    | ,    | DOT  | /    |
+
+
+***** RSTHP
+
+~MIRYOKU_ALPHAS=RSTHP~
+
+#+NAME: rsthp
+|   | C | Y | F | K | Z | L | , | U   | Q |
+| R | S | T | H | P | W | N | A | I   | O |
+| J | V | G | D | B | X | M | . | DEL |   |
 
 
 **** Nav
@@ -501,6 +544,10 @@ Not available with ~MIRYOKU_LAYERS=FLIP~.
 | U_NUM    | Num    |
 | U_SYM    | Sym    |
 | U_FUN    | Fun    |
+| U_NSYM   | Nsym   |
+| U_BRAC   | Brac   |
+| U_PUNC   | Punc   |
+| U_BNFRD  | Bnfrd  |
 
 
 **** symbol-names
@@ -612,7 +659,7 @@ Source keycode to implementation equivalent (source, QMK, ZMK, KMonad).
 | DQUO        | DQUO             | DQT           | U_DQUO        |
 | END         | END              | END           | end           |
 | ENT         | ENT              | RET           | ent           |
-| EP_TOG      |                  | &u_ep_tog     |               |
+| EP_TOG      |                  | U_EP_TOG     |               |
 | EQL         | EQL              | EQL           | =             |
 | ESC         | ESC              | ESC           | esc           |
 | EXLM        | EXLM             | EXCL          | !             |
@@ -668,11 +715,11 @@ Source keycode to implementation equivalent (source, QMK, ZMK, KMonad).
 | RBRC        | RBRC             | RBKT          | ]             |
 | RCBR        | RCBR             | RBRC          | }             |
 | RESET       |                  | &reset        |               |
-| RGB_HUI     | RGB_HUI          | &u_rgb_hui    |               |
-| RGB_MOD     | RGB_MOD          | &u_rgb_eff    |               |
-| RGB_SAI     | RGB_SAI          | &u_rgb_sai    |               |
-| RGB_TOG     | RGB_TOG          | &u_rgb_tog    |               |
-| RGB_VAI     | RGB_VAI          | &u_rgb_bri    |               |
+| RGB_HUI     | RGB_HUI          | U_RGB_HUI     |               |
+| RGB_MOD     | RGB_MOD          | U_RGB_EFF    |               |
+| RGB_SAI     | RGB_SAI          | U_RGB_SAI    |               |
+| RGB_TOG     | RGB_TOG          | U_RGB_TOG    |               |
+| RGB_VAI     | RGB_VAI          | U_RGB_BRI    |               |
 | RGHT        | RGHT             | RIGHT         | right         |
 | RPRN        | RPRN             | RPAR          | U_RPRN        |
 | SCLN        | SCLN             | SEMI          | ;             |
@@ -865,6 +912,8 @@ Body of miryoku_layer_selection.h.
 #+NAME: layer-body
 #+BEGIN_SRC C :main no :tangle no
 #pragma once
+#define MIRYOKU_ALPHAS_RSTHP
+#define MIRYOKU_TAP_RSTHP
 
 #include "miryoku_layer_alternatives.h"
 
@@ -914,6 +963,8 @@ Body of miryoku_layer_selection.h.
       #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_QWERTY
     #elif defined (MIRYOKU_ALPHAS_QWERTZ)
       #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_QWERTZ
+    #elif defined (MIRYOKU_ALPHAS_RSTHP)
+      #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_RSTHP
     #else
       #define MIRYOKU_LAYER_BASE MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH
     #endif
@@ -1024,6 +1075,8 @@ Body of miryoku_layer_selection.h.
       #define MIRYOKU_LAYER_TAP MIRYOKU_ALTERNATIVES_TAP_QWERTY
     #elif defined (MIRYOKU_TAP_QWERTZ)
       #define MIRYOKU_LAYER_TAP MIRYOKU_ALTERNATIVES_TAP_QWERTZ
+    #elif defined (MIRYOKU_TAP_RSTHP)
+      #define MIRYOKU_LAYER_TAP MIRYOKU_ALTERNATIVES_TAP_RSTHP
     #else
       #define MIRYOKU_LAYER_TAP MIRYOKU_ALTERNATIVES_TAP_COLEMAKDH
     #endif
@@ -1135,6 +1188,35 @@ Body of miryoku_layer_selection.h.
 #if !defined(MIRYOKU_LAYERMAPPING_FUN)
   #define MIRYOKU_LAYERMAPPING_FUN MIRYOKU_MAPPING
 #endif
+
+#if !defined(MIRYOKU_LAYER_NSYM)
+  #define MIRYOKU_LAYER_NSYM MIRYOKU_ALTERNATIVES_NSYM
+#endif
+#if !defined(MIRYOKU_LAYERMAPPING_NSYM)
+  #define MIRYOKU_LAYERMAPPING_NSYM MIRYOKU_MAPPING
+#endif
+
+#if !defined(MIRYOKU_LAYER_BRAC)
+  #define MIRYOKU_LAYER_BRAC MIRYOKU_ALTERNATIVES_BRAC
+#endif
+#if !defined(MIRYOKU_LAYERMAPPING_BRAC)
+  #define MIRYOKU_LAYERMAPPING_BRAC MIRYOKU_MAPPING
+#endif
+
+#if !defined(MIRYOKU_LAYER_PUNC)
+  #define MIRYOKU_LAYER_PUNC MIRYOKU_ALTERNATIVES_PUNC
+#endif
+#if !defined(MIRYOKU_LAYERMAPPING_PUNC)
+  #define MIRYOKU_LAYERMAPPING_PUNC MIRYOKU_MAPPING
+#endif
+
+#if !defined(MIRYOKU_LAYER_BNFRD)
+  #define MIRYOKU_LAYER_BNFRD MIRYOKU_ALTERNATIVES_BNFRD
+#endif
+#if !defined(MIRYOKU_LAYERMAPPING_BNFRD)
+  #define MIRYOKU_LAYERMAPPING_BNFRD MIRYOKU_MAPPING
+#endif
+
 #+END_SRC
 
 
@@ -1533,6 +1615,9 @@ prepended.
 #define MIRYOKU_ALTERNATIVES_BASE_QWERTZ \
 <<table-layer-taphold(alphas_table=qwertz)>>
 
+#define MIRYOKU_ALTERNATIVES_BASE_RSTHP \
+<<table-layer-taphold(alphas_table=rsthp)>>
+
 
 #define MIRYOKU_ALTERNATIVES_TAP_AZERTY_FLIP \
 <<table-layer-full(alphas_table=azerty, thumbs_table=thumbs-flip)>>
@@ -1593,6 +1678,9 @@ prepended.
 
 #define MIRYOKU_ALTERNATIVES_TAP_QWERTZ \
 <<table-layer-full(alphas_table=qwertz, thumbs_table=thumbs)>>
+
+#define MIRYOKU_ALTERNATIVES_TAP_RSTHP \
+<<table-layer-full(alphas_table=rsthp, thumbs_table=thumbs)>>
 
 
 #define MIRYOKU_ALTERNATIVES_NAV_INVERTEDT_FLIP \
@@ -1663,6 +1751,17 @@ prepended.
 #define MIRYOKU_ALTERNATIVES_FUN \
 <<table-layer-half(current_layer_name="U_FUN", opposite_layer_name="U_MEDIA", half_table=fun-l, mode="l")>>
 
+#define MIRYOKU_ALTERNATIVES_BNFRD \
+<<table-layer-half(current_layer_name="U_BNFRD", half_table=bnfrd-r, mode="r")>>
+
+#define MIRYOKU_ALTERNATIVES_NSYM \
+<<table-layer-half(current_layer_name="U_NSYM", half_table=nsym-l, mode="l")>>
+
+#define MIRYOKU_ALTERNATIVES_BRAC \
+<<table-layer-half(current_layer_name="U_BRAC", half_table=brac-l, mode="l")>>
+
+#define MIRYOKU_ALTERNATIVES_PUNC \
+<<table-layer-half(current_layer_name="U_PUNC", half_table=punc-l, mode="l")>>
 
 #define MIRYOKU_ALTERNATIVES_BUTTON \
 <<table-layer-full(alphas_table=button, thumbs_table=button-thumbs)>>
