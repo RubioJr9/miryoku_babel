@@ -1372,6 +1372,9 @@ prepended.
 #define MIRYOKU_ALTERNATIVES_BASE_QWERTZ \
 <<table-layer-taphold(alphas_table=qwertz)>>
 
+#define MIRYOKU_ALTERNATIVES_BASE_RSTHP \
+<<table-layer-taphold(alphas_table=rsthp)>>
+
 
 #define MIRYOKU_ALTERNATIVES_TAP_AZERTY_FLIP \
 <<table-layer-full(alphas_table=azerty, thumbs_table=thumbs-flip)>>
@@ -1432,6 +1435,9 @@ prepended.
 
 #define MIRYOKU_ALTERNATIVES_TAP_QWERTZ \
 <<table-layer-full(alphas_table=qwertz, thumbs_table=thumbs)>>
+
+#define MIRYOKU_ALTERNATIVES_TAP_RSTHP \
+<<table-layer-full(alphas_table=rsthp, thumbs_table=thumbs)>>
 
 
 #define MIRYOKU_ALTERNATIVES_NAV_INVERTEDT_FLIP \
@@ -1502,6 +1508,17 @@ prepended.
 #define MIRYOKU_ALTERNATIVES_FUN \
 <<table-layer-half(current_layer_name="U_FUN", opposite_layer_name="U_MEDIA", half_table=fun-l, mode="l")>>
 
+#define MIRYOKU_ALTERNATIVES_BNFRD \
+<<table-layer-half(current_layer_name="U_BNFRD", half_table=bnfrd-r, mode="r")>>
+
+#define MIRYOKU_ALTERNATIVES_NSYM \
+<<table-layer-half(current_layer_name="U_NSYM", half_table=nsym-l, mode="l")>>
+
+#define MIRYOKU_ALTERNATIVES_BRAC \
+<<table-layer-half(current_layer_name="U_BRAC", half_table=brac-l, mode="l")>>
+
+#define MIRYOKU_ALTERNATIVES_PUNC \
+<<table-layer-half(current_layer_name="U_PUNC", half_table=punc-l, mode="l")>>
 
 #define MIRYOKU_ALTERNATIVES_BUTTON \
 <<table-layer-full(alphas_table=button, thumbs_table=button-thumbs)>>
