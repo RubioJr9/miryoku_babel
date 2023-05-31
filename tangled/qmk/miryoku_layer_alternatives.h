@@ -382,16 +382,16 @@ U_NP,              U_NP,              KC_LPRN,           KC_RPRN,           KC_U
 
 
 #define MIRYOKU_ALTERNATIVES_FUN_FLIP \
-TD(U_TD_BOOT),     TD(U_TD_U_TAP),    TD(U_TD_U_EXTRA),  TD(U_TD_U_BASE),   U_NA,              KC_PSCR,           KC_F7,             KC_F8,             KC_F9,             KC_F12,            \
-KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           U_NA,              KC_SCRL,           KC_F4,             KC_F5,             KC_F6,             KC_F11,            \
-U_NA,              KC_ALGR,           TD(U_TD_U_MEDIA),  TD(U_TD_U_FUN),    U_NA,              KC_PAUS,           KC_F1,             KC_F2,             KC_F3,             KC_F10,            \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_TAB,            KC_SPC,            KC_APP,            U_NP,              U_NP
+TD(U_TD_BOOT),     TD(U_TD_U_TAP),    TD(U_TD_U_EXTRA),  TD(U_TD_U_BASE),   U_NA,              KC_PSCR,           KC_F9,             KC_F8,             KC_F7,             KC_F10,            \
+KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           U_NA,              KC_F4,             KC_F3,             KC_F2,             KC_F1,             KC_F11,            \
+U_NA,              KC_ALGR,           TD(U_TD_U_MEDIA),  TD(U_TD_U_FUN),    U_NA,              KC_PAUS,           KC_SCRL,           KC_F6,             KC_F5,             KC_F12,            \
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_APP,            KC_SPC,            KC_TAB,            U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_FUN \
-KC_F12,            KC_F7,             KC_F8,             KC_F9,             KC_PSCR,           U_NA,              TD(U_TD_U_BASE),   TD(U_TD_U_EXTRA),  TD(U_TD_U_TAP),    TD(U_TD_BOOT),     \
-KC_F11,            KC_F4,             KC_F5,             KC_F6,             KC_SCRL,           U_NA,              KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,           \
-KC_F10,            KC_F1,             KC_F2,             KC_F3,             KC_PAUS,           U_NA,              TD(U_TD_U_FUN),    TD(U_TD_U_MEDIA),  KC_ALGR,           U_NA,              \
-U_NP,              U_NP,              KC_APP,            KC_SPC,            KC_TAB,            U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+KC_PSCR,           KC_F9,             KC_F8,             KC_F7,             KC_F10,            U_NA,              TD(U_TD_U_BASE),   TD(U_TD_U_EXTRA),  TD(U_TD_U_TAP),    TD(U_TD_BOOT),     \
+KC_F4,             KC_F3,             KC_F2,             KC_F1,             KC_F11,            U_NA,              KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,           \
+KC_PAUS,           KC_SCRL,           KC_F6,             KC_F5,             KC_F12,            U_NA,              TD(U_TD_U_FUN),    TD(U_TD_U_MEDIA),  KC_ALGR,           U_NA,              \
+U_NP,              U_NP,              KC_TAB,            KC_SPC,            KC_APP,            U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_BNFRD \
 TD(U_TD_BOOT),     TD(U_TD_U_TAP),    TD(U_TD_U_EXTRA),  TD(U_TD_U_BASE),   U_NA,              KC_LPRN,           KC_7,              KC_8,              KC_9,              KC_RPRN,           \
