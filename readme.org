@@ -98,16 +98,16 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 ***** Thumbs
 
 #+NAME: thumbs
-| U_NP | U_NP | TAB | E | ESC | ENT | SPC | BSPC | U_NP | U_NP |
+| U_NP | U_NP | BSPC | E | ESC | ENT | SPC | TAB | U_NP | U_NP |
 
 
 **** Hold
 
 #+NAME: hold
-| BOOT | DF(U_TAP) | DF(U_EXTRA) | DF(U_BASE) |         |        | DF(U_BASE) | DF(U_EXTRA) | DF(U_TAP) | BOOT |
-| LGUI | LALT      | LCTL        | LSFT       |         |        | LSFT       | LCTL        | LALT      | LGUI |
-|      | ALGR      | LOCK_OPP    | LOCK_CUR   |         | U_FUN  | LOCK_CUR   | LOCK_OPP    | ALGR      |      |
-| U_NP | U_NP      | U_MEDIA     | U_NAV      | U_BNFRD | U_NSYM | U_PUNC     | U_BRAC      | U_NP      | U_NP |
+| BOOT | DF(U_TAP) | DF(U_EXTRA) | DF(U_BASE) |         |          | DF(U_BASE) | DF(U_EXTRA) | DF(U_TAP) | BOOT |
+| LGUI | LALT      | LCTL        | LSFT       |         |          | LSFT       | LCTL        | LALT      | LGUI |
+|      | ALGR      | LOCK_OPP    | U_MEDIA    | U_FUN   | LOCK_CUR | LOCK_OPP   | ALGR        |           |      |
+| U_NP | U_NP      | U_BRAC      | U_NAV      | U_BNFRD | U_NSYM   | U_PUNC     |             | U_NP      | U_NP |
 
 *** Brackets (~BRAC~)
 
@@ -116,6 +116,12 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 | {    | <    | [ | ( |   |
 | }    | >    | ] | ) |   |
 | U_NP | U_NP |   | = | _ |
+
+#+NAME: brac-r
+|   | ) | ] | >    | }    |
+|   | ( | [ | <    | {    |
+|   | ) | ] | >    | }    |
+| _ | = |   | U_NP | U_NP |
 
 *** Punctuation (~PUNC~)
 
@@ -309,9 +315,9 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 ~MIRYOKU_ALPHAS=RSTHP~
 
 #+NAME: rsthp
-|   | C | Y | F | K | Z | L | , | U   | Q |
-| R | S | T | H | P | W | N | A | I   | O |
-| J | V | G | D | B | X | M | . | DEL |   |
+| TG(TRACKBALL) | C | Y | F | K | Z | L | , | U   | Q             |
+| R             | S | T | H | P | W | N | A | I   | O             |
+| J             | V | G | D | B | X | M | . | DEL | TG(TRACKBALL) |
 
 
 **** Nav
@@ -341,7 +347,12 @@ Not available with ~MIRYOKU_LAYERS=FLIP~.
 | WH_L  | WH_D  | WH_U  | WH_R  |       |
 | BTN2  | BTN1  | BTN3  | U_NP  | U_NP  |
 
-
+****** Trackball
+#+NAME: trackball-r
+| TG(BASE) |      |      |      |      |   |      |      |      |          |
+|          |      |      |      |      |   |      |      |      |          |
+|          |      |      |      |      |   | BTN1 | BTN2 | BTN3 | TG(BASE) |
+| U_NP     | U_NP | BTN2 | BTN1 | BTN3 |   |      |      | U_NP | U_NP     |
 ****** Media
 
 #+NAME: media-r-vi
@@ -1268,7 +1279,7 @@ Keycodes that match any of these prefixes will not have ~KC_~ automatically
 prepended.
 
 #+NAME: nonkc
-| U_ | RGB_ | OU_  | QK_ | S( | C( | SCMD( | LCMD( | TD( | CW_TOGG |
+| U_ | RGB_ | OU_  | QK_ | S( | C( | SCMD( | LCMD( | TD( | CW_TOGG | TG( |
 
 
 **** license-qmk
@@ -1515,7 +1526,7 @@ prepended.
 <<table-layer-half(current_layer_name="U_NSYM", half_table=nsym-l, mode="l")>>
 
 #define MIRYOKU_ALTERNATIVES_BRAC \
-<<table-layer-half(current_layer_name="U_BRAC", half_table=brac-l, mode="l")>>
+<<table-layer-half(current_layer_name="U_BRAC", half_table=brac-r, mode="r")>>
 
 #define MIRYOKU_ALTERNATIVES_PUNC \
 <<table-layer-half(current_layer_name="U_PUNC", half_table=punc-l, mode="l")>>
@@ -1775,7 +1786,7 @@ prepended.
 <<table-layer-half(current_layer_name="U_NSYM", half_table=nsym-l, mode="l")>>
 
 #define MIRYOKU_ALTERNATIVES_BRAC \
-<<table-layer-half(current_layer_name="U_BRAC", half_table=brac-l, mode="l")>>
+<<table-layer-half(current_layer_name="U_BRAC", half_table=brac-r, mode="r")>>
 
 #define MIRYOKU_ALTERNATIVES_PUNC \
 <<table-layer-half(current_layer_name="U_PUNC", half_table=punc-l, mode="l")>>
