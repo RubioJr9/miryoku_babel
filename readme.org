@@ -315,9 +315,9 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 ~MIRYOKU_ALPHAS=RSTHP~
 
 #+NAME: rsthp
-| TG(TRACKBALL) | C | Y | F | K | Z | L | , | U   | Q             |
-| R             | S | T | H | P | W | N | A | I   | O             |
-| J             | V | G | D | B | X | M | . | DEL | TG(TRACKBALL) |
+| TAB | C | Y | F | K | Z | L | , | U   | Q             |
+| R   | S | T | H | P | W | N | A | I   | O             |
+| J   | V | G | D | B | X | M | . | DEL | TG(TRACKBALL) |
 
 
 **** Nav
