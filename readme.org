@@ -98,16 +98,16 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 ***** Thumbs
 
 #+NAME: thumbs
-| U_NP | U_NP | BSPC | E | ESC | ENT | SPC | TAB | U_NP | U_NP |
+| U_NP | U_NP | TAB | E | ESC | ENT | SPC | U_NP | U_NP | U_NP |
 
 
 **** Hold
 
 #+NAME: hold
-| BOOT | DF(U_TAP) | DF(U_EXTRA) | DF(U_BASE) |         |          | DF(U_BASE) | DF(U_EXTRA) | DF(U_TAP) | BOOT |
-| LGUI | LALT      | LCTL        | LSFT       |         |          | LSFT       | LCTL        | LALT      | LGUI |
-|      | ALGR      | LOCK_OPP    | U_MEDIA    | U_FUN   | LOCK_CUR | LOCK_OPP   | ALGR        |           |      |
-| U_NP | U_NP      | U_BRAC      | U_NAV      | U_BNFRD | U_NSYM   | U_PUNC     |             | U_NP      | U_NP |
+| BOOT | DF(U_TAP) | DF(U_EXTRA) | DF(U_BASE) |         |        | DF(U_BASE) | DF(U_EXTRA) | DF(U_TAP) | BOOT |
+| LGUI | LALT      | LCTL        | LSFT       |         |        | LSFT       | LCTL        | LALT      | LGUI |
+|      | ALGR      | LOCK_OPP    |            | U_MEDIA | U_FUN  | ALGR       |             |           |      |
+| U_NP | U_NP      | U_BRAC      | U_NAV      | U_BNFRD | U_NSYM | U_PUNC     |             | U_NP      | U_NP |
 
 *** Brackets (~BRAC~)
 
@@ -315,9 +315,9 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 ~MIRYOKU_ALPHAS=RSTHP~
 
 #+NAME: rsthp
-| TAB | C | Y | F | K | Z | L | , | U   | Q             |
-| R   | S | T | H | P | W | N | A | I   | O             |
-| J   | V | G | D | B | X | M | . | DEL | TG(TRACKBALL) |
+| DEL | C | Y | F | K | Z | L | , | U    | Q             |
+| R   | S | T | H | P | W | N | A | I    | O             |
+| J   | V | G | D | B | X | M | . | BSPC | TG(TRACKBALL) |
 
 
 **** Nav
